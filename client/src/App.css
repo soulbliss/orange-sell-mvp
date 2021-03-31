@@ -1,0 +1,223 @@
+.App {
+  text-align: center;  
+
+}
+
+
+
+
+.signin-form {
+
+  text-align: center;
+
+
+}
+
+.signup-form {
+
+  text-align: center;
+ 
+  
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 10px;
+  
+}
+
+
+
+#user {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.user-profile-description{
+  text-align: justify;
+    text-align-last: center;
+}
+
+
+#half-fade {
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+
+
+#mark {
+  margin: 0 -0.4em;
+  padding: 0.1em 0.4em;
+  border-radius: 0.8em 0.3em;
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 225, 0, 0.1),
+    rgba(255, 225, 0, 0.7) 4%,
+    rgba(255, 225, 0, 0.3)
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  color: rgba(0, 0, 0, 0.631);
+}
+
+.sidebar {
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+
+  position: fixed;
+  height: 45%;
+  overflow: auto;
+  background-color: #f1f1f1;
+  box-shadow: inset -7px 0 9px -7px rgba(0,0,0,0.1);
+
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+ 
+}
+
+.session-loader {
+  
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+
+  background-size: 100%;
+
+ 
+}
+
+#half-transparent{
+ 
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+ 
+}
+
+
+.sidebar a {
+  display: block;
+  color: rgba(0, 0, 0, 0.36);
+  padding: 16px;
+  text-decoration: none;
+  font-weight: 300;
+  
+}
+
+
+
+.active {
+  color: rgba(20, 20, 43, 0.36);
+  
+}
+ 
+.sidebar a.active {
+  background-color: rgb(75, 77, 75);
+  color: white;
+ 
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+
+  }
+  .sidebar a {text-align: center;}
+  div.content {margin-left: 0;}
+}
+
+/* for the enter button on read page */
+.top-key-words-container > .MuiIconButton-root{
+  margin-top: 20px;
+  background: rgba(239, 240, 246, 1);
+}
+
+.logo-resize{
+  width: 120px;
+  height: 110px;
+
+}
+
+
+/* large screen sizes */
+@media screen and (min-width: 890px) {
+  .Main-header {
+    text-align: left;
+    margin-left: 30px;
+  }
+
+  .logo-resize{
+    width: 101px;
+  height: 87px;
+
+  }
+
+}
+
+
+/* medium screen sizes */
+@media screen and (min-width: 388px) {
+
+
+}
+
+
+
+
+
+/* Small screen sizes */
+
+@media screen and (max-width: 430px) {
+
+ 
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+  .sidebar {
+    height: 200px;
+    height: 40%;
+  }
+
+
+  .Main-header {
+    font-size: 36px;
+  }
+
+
+ 
+  
+  
+}
