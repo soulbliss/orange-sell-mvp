@@ -88,7 +88,7 @@ class Signin extends React.Component {
 
             <div className='signin-form'>
 
-                <h1 id="mark" style={{ color: "grey", fontSize:64, fontWeight:200 }}> 
+                <h1 style={{ color: "grey", fontSize:64, fontWeight:200 }}> 
                 
                 Welcome to Scaffoldzoid Inc.
                 
