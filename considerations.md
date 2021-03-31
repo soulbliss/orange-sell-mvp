@@ -34,7 +34,4 @@
 ### Security and Upgrades
 
 - React, Mongodb, Express and Node are heavily used by the community and have a strong community support, and it seems less
-likely there will be any other major alternative emerging out, atleast for a few years.
-
-regularly 
-  get a security based patched and upgrades.
+likely there will be any other major alternative emerging out, atleast for a few years. Plus they regularly get security based patched and upgrades.
