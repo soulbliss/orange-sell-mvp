@@ -56,7 +56,7 @@ const UserItems = ({ username, authStatus }) => {
                             <StyledTableCell >Orange type</StyledTableCell>
 
                             <StyledTableCell align="right">Rate (₹/kg) </StyledTableCell>
-                            <StyledTableCell align="right">Date Uploaded</StyledTableCell>
+                            <StyledTableCell align="right">Date Updated</StyledTableCell>
                             {authStatus ? <StyledTableCell align="right">Edit</StyledTableCell> : null}
 
 
@@ -75,7 +75,7 @@ const UserItems = ({ username, authStatus }) => {
                                     <StyledTableCell >   {itemCardInfo.item}   </StyledTableCell>
 
                                     <StyledTableCell align="right">{itemCardInfo.tag}</StyledTableCell>
-                                    <StyledTableCell align="right">{humanReadableDate(itemCardInfo.createdDate)}</StyledTableCell>
+                                    <StyledTableCell align="right">{humanReadableDate(itemCardInfo.updatedDate)}</StyledTableCell>
                                     {authStatus ? <StyledTableCell align="right"><EditItemCardModal _id={itemCardInfo._id} item={itemCardInfo.item} tag={itemCardInfo.tagtag} /></StyledTableCell> : null}
                                 </StyledTableRow>
 
