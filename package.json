@@ -9,7 +9,7 @@
     "dev": "concurrently --names \"server,client\" \"npm run server --silent\" \"npm run client --silent\"",
     "pre-build": "echo \"Welcome to the build creation!\"",
     "build-logic": "cd client && npm run build && echo \"build creation done!\" ",
-    "post-build": "echo \"Initializing the server...\" && node server",
+    "post-build": "echo \"Initializing the server...\"",
     "build": "run-s pre-build build-logic post-build"
   },
   "author": "",
