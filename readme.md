@@ -1,5 +1,5 @@
 
-## Considerations
+## Design Considerations
 
 - The design decisions used while creating the app are mentioned [here](./considerations.md)
 
