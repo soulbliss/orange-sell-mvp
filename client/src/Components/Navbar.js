@@ -65,7 +65,7 @@ const NavbarAuth = ({ session }) => {
     >
         
       {/* <BottomNavigationAction label="Home" value="" icon={<RestoreIcon />} /> */}
-      <BottomNavigationAction label={username} value="profile" icon={<FavoriteIcon />} />
+      <BottomNavigationAction label={"Profile"} value={username} icon={<FavoriteIcon />} />
       {/* <BottomNavigationAction label="search" value="search" icon={<SearchIcon />} /> */}
 
     </BottomNavigation>
