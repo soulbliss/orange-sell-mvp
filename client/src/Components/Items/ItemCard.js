@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import EditItemCardModal from './EditItemCardModal'
-import VersionsItemPage from './VersionsItemPage'
 
 
 
