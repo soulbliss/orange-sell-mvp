@@ -22,6 +22,12 @@ const UserSchema = new Schema({
         required: true
     },
 
+    description: {
+        type: String,
+        default: "Add your description here!",
+        required: false,
+    },
+
     items: {
         type:[Schema.Types.ObjectId],
         ref: 'Item'

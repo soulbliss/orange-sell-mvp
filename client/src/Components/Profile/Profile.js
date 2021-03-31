@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import UserInfo from './UserInfo';
 import UserItems from './UserItems';
 import BuyerFeed from './BuyerFeed';
+import Signout from './../Auth/Signout'
+
+import Paper from '@material-ui/core/Paper';
+
 
 import AddItemCardPage from './../Items/AddItemCardPage';
-
 
 import withAuth from '../withAuth';
 
@@ -25,7 +28,7 @@ const Profile = ({ session, props }) => {
     const [userInfo, setUserInfo] = useState({})
 
     const { loading: queryLoading, error: queryError, data: queryData } = useQuery(
-        GET_USER_INFO, {variables: {username}});
+        GET_USER_INFO, { variables: { username } });
 
 
 
@@ -38,16 +41,16 @@ const Profile = ({ session, props }) => {
 
             {/* add item option button only for sellers */}
 
-            {queryData && 
+            {queryData &&
 
                 <div>
 
-                 
-                
-                    
+
+
+
                     {authStatus && userType === 'seller' ? <AddItemCardPage /> : null}
 
-                    <UserInfo session={session} username={username}/>
+                    <UserInfo session={session} username={username} descriptionUser={queryData.getUserInfo["description"]}/>
 
                     <hr />
 
@@ -65,7 +68,7 @@ const Profile = ({ session, props }) => {
                     {queryData.getUserInfo["userType"] === 'seller' ?
 
 
-                        <UserItems username={username} authStatus={authStatus}/>
+                        <UserItems username={username} authStatus={authStatus} />
 
                         :
 
@@ -75,11 +78,11 @@ const Profile = ({ session, props }) => {
                     }
 
                 </div>
-            
+
 
             }
 
-
+            {queryData && <Signout />}
 
         </div>
 

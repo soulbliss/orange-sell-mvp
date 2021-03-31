@@ -30,7 +30,7 @@ import Spinner from './Components/Spinner';
 
 
 const httpLink = createHttpLink({
-  uri: 'https://scaffold.deeps.site/graphql',
+  uri: process.env.REACT_APP_ENV === 'production' ? 'https://scaffold.deeps.site/graphql' : 'http://localhost:7000/graphql',
   credentials: 'same-origin'
 });
 

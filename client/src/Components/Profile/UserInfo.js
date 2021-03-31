@@ -1,17 +1,38 @@
-import React from 'react';
-import Signout from './../Auth/Signout'
+import React, { useState } from 'react';
+
 import HeaderUser from '../HeaderUser';
 
 import { Container, Row, Col } from 'reactstrap';
+import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
+
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import EditIcon from '@material-ui/icons/Edit';
 
 import moment from 'moment';
 
+import { useMutation, useQuery } from "@apollo/react-hooks";
+import {
+    EDIT_DESCRIPTION
+} from '../../queries';
 
 
 
+const UserInfo = ({ session, username, descriptionUser }) => {
 
-const UserInfo = ({ session, username }) => {
+    const [editStatus, setEditStatus] = useState(false)
+    const [description, setDescription] = useState(descriptionUser)
+
+    const handleDescriptionChange = (event) => setDescription(event.target.value)
+
+    const [editDescription,
+        { data: DescriptionMutatedata,
+            loading: DescriptionMutateLoading,
+            error: DescriptionMutateError }] = useMutation(EDIT_DESCRIPTION);
+
+
 
     var date = moment(parseInt(session.getCurrentUser.joinDate)).format('MMM DD, YYYY')
 
@@ -28,6 +49,15 @@ const UserInfo = ({ session, username }) => {
             <HeaderUser userType={userType} />
 
             <Row>
+
+                {loggedUser === username ? <Col xs={{ size: 2, offset: 10 }}>
+
+                    <IconButton aria-label="delete" onClick={() => setEditStatus(true)}>
+                        <EditIcon fontSize="large" />
+                    </IconButton>
+
+                </Col> : null}
+
                 <Col xs={12}>
 
                     <div id="user"
@@ -45,7 +75,72 @@ const UserInfo = ({ session, username }) => {
 
 
 
-                    <Signout />
+                    <Col md={{ size: 6, offset: 3 }} xs={12}>
+
+
+
+                        <Paper variant="outlined" />
+
+
+                        {editStatus ? null :
+
+                            <div className="user-profile-description">
+                                {description}
+                            </div>
+                        }
+
+
+                        <Paper />
+
+                    </Col>
+
+                    {editStatus ?
+
+                        <Col xs={{ size: 6, offset: 3 }}>
+
+                            <TextField id="outlined-basic"
+                                label="Your profile description here!"
+                                fullWidth
+                                variant="outlined"
+                                defaultValue={session.getCurrentUser.description}
+                                onChange={handleDescriptionChange}
+                                value={[description]}
+
+                            />
+
+                        </Col>
+
+                        : null}
+
+                    <div style={{ marginBottom: 10 }}></div>
+
+
+                    {editStatus ? <Button variant="contained"
+                        onClick={e => {
+                            e.preventDefault();
+
+                            editDescription({
+                                variables: {
+                                    username, description
+                                }
+                            });
+                            setEditStatus(false)
+
+                        }}
+
+                    >
+
+
+
+                        Save changes</Button> : null}
+
+                    {DescriptionMutatedata && <p>Updated description ✅</p>}
+                    {DescriptionMutateLoading && <p>Loading...</p>}
+                    {DescriptionMutateError && <p>Error while updating description. Please try again</p>}
+
+                    <div style={{ marginBottom: 20 }}></div>
+
+
 
                 </Col>
             </Row>

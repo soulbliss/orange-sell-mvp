@@ -1,11 +1,5 @@
 exports.typeDefs = `
 
-type thinkAndTime {
-
-    think : String!
-
-    time : String!
-}
 
 type Item {
 
@@ -34,6 +28,8 @@ type User {
     username: String!
 
     password: String!
+
+    description: String
 
     userType: String!
 
@@ -77,6 +73,8 @@ type Mutation {
 
     editItem(_id: ID!, item: String!, tag:String!): Item
 
+    editDescription(username: String!, description: String): User
+
     deleteItem(_id: ID!): Item
 
 }
@@ -84,7 +82,3 @@ type Mutation {
 
 
 `;
-
-//
-
-

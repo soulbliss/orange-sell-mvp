@@ -109,6 +109,19 @@ exports.resolvers = {
 
         },
 
+        editDescription: async (root, {username, description }, { User }) => {
+
+
+            const results = await User.findOneAndUpdate({ username }, {
+                
+                $set: { description: description, updatedDate: new Date() }
+                
+            });
+
+            return results
+
+        },
+
 
         deleteItem: async (root, { _id }, { Item, User, currentUser }) => {
 

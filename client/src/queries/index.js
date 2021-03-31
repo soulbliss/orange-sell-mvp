@@ -10,6 +10,7 @@ query {
     joinDate
     email
     userType
+    description
   }
 }
 
@@ -57,6 +58,7 @@ query($username: String!) {
     username
     userType
     password
+    description
   }
 }
 `;
@@ -83,7 +85,15 @@ mutation( $tag: String!,
   }
 `;
 
-
+export const EDIT_DESCRIPTION = gql`
+mutation($username: String!, $description: String) {
+  editDescription(username: $username, description: $description) {
+    _id
+    username
+    description
+    }
+}
+`;
 
 export const EDIT_ITEM = gql`
 mutation($_id: ID!, $item: String!, $tag: String!) {
