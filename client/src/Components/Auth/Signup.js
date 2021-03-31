@@ -65,7 +65,7 @@ class Signup extends React.Component {
 
             this.clearState();
 
-            this.props.history.push('/profile')
+            this.props.history.push('/user/' + user)
 
         });
 
