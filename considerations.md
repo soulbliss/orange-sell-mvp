@@ -1,4 +1,4 @@
-##Security considerations
+## Security considerations
 
 ### JWT token authentication
 - We store a hashed password in our database, in case there's any leak of data because of a data breach.
