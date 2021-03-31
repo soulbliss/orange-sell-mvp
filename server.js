@@ -90,7 +90,7 @@ if (process.env.NODE_ENV === 'production') {
 
     server.express.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-        //console.log("A new request got processed at:", moment().format('MMMM Do YYYY, h:mm:ss a'));
+        console.log("A new request got processed at:", moment().format('MMMM Do YYYY, h:mm:ss a'));
     })
 }
 
