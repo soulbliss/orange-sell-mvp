@@ -1,18 +1,5 @@
 import { gql } from 'apollo-boost';
 
-
-
-/* Recipes Queries */
-
-
-
-
-
-/* Recipes Mutations */
-
-
-
-
 /* User Queries */
 
 export const GET_CURRENT_USER = gql`

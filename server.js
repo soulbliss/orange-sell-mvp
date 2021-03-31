@@ -41,7 +41,7 @@ const schema = {
 }
 
 
-const PORT = process.env.PORT || 4444;
+const PORT = process.env.PORT || 7000;
 const grapql_server_options = {
     port: PORT,
     endpoint: '/graphql',
@@ -97,4 +97,4 @@ if (process.env.NODE_ENV === 'production') {
 
 
 server.start(grapql_server_options, ({ port }) =>
-    console.log(`🚀 Server ready at http://localhost:4444`))
+    console.log(`🚀 Server ready at http://localhost:7000`))

@@ -30,7 +30,7 @@ import Spinner from './Components/Spinner';
 
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4444/graphql',
+  uri: 'http://localhost:7000/graphql',
   credentials: 'same-origin'
 });
 
