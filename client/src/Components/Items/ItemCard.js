@@ -63,6 +63,9 @@ const ItemCard = ({ _id, item, tag, version, updatedDate, username }) => {
                     <Chip
 
                         label={tag} />
+                    
+                    <p style={{ marginTop: 5,  marginLeft: 5, marginRight: 5 }}> ₹/kg</p>
+
 
                 </Row>
 

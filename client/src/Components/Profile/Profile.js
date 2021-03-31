@@ -60,7 +60,7 @@ const Profile = ({ session, props }) => {
                     {/* { if buyer, we show feed of all rates being fed from network } */}
 
 
-                    <p>{queryData.getUserInfo["userType"]}</p>
+                    <p>Account type: {queryData.getUserInfo["userType"]}</p>
 
                     {queryData.getUserInfo["userType"] === 'seller' ?
 

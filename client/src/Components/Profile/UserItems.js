@@ -55,7 +55,7 @@ const UserItems = ({ username, authStatus }) => {
                             <StyledTableCell >No.</StyledTableCell>
                             <StyledTableCell >Orange type</StyledTableCell>
 
-                            <StyledTableCell align="right">Rate</StyledTableCell>
+                            <StyledTableCell align="right">Rate (₹/kg) </StyledTableCell>
                             <StyledTableCell align="right">Date Uploaded</StyledTableCell>
                             {authStatus ? <StyledTableCell align="right">Edit</StyledTableCell> : null}
 

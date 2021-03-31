@@ -57,6 +57,8 @@ class Signup extends React.Component {
 
         event.preventDefault();
 
+        var user = this.state.username;
+
         signupUser().then(async ({ data }) => {
 
             localStorage.setItem('token', data.signupUser.token);
