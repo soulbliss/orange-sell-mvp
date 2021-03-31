@@ -49,7 +49,7 @@ const NavbarAuth = ({ session }) => {
     const history = useHistory();
 
     const handleChange = (event, newValue) => {
-      history.push(`/${newValue}`);
+      history.push(`/user/${newValue}`);
       setValue(newValue);
     };
 
