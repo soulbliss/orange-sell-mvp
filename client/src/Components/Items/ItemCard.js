@@ -40,7 +40,7 @@ const ItemCard = ({ _id, item, tag, version, updatedDate, username }) => {
 
                 <Divider />
 
-                <Row style={{ marginTop: 10 }}>
+                <Row style={{ marginTop: 10, justifyContent: "center" }}>
 
                     <Link to={`/user/` + username}  >
                         <Chip
@@ -68,8 +68,6 @@ const ItemCard = ({ _id, item, tag, version, updatedDate, username }) => {
 
 
                 </Row>
-
-
 
 
 
